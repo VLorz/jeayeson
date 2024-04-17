@@ -70,6 +70,12 @@ namespace jeayeson
         : value_{ copy.value_ }
       { }
 
+      value& operator=(const value &other) {
+          if (this != &other)
+            set(other.value_);
+          return *this;
+      }
+
       template
       <
         typename T,
